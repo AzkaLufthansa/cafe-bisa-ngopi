@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.navbar {
+    padding: 50px 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: #f9bb6f !important;
+}
+
+.nav-item {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-right: 50px;
+}
+
+.nav-item:last-child {
+    padding-right: 0;
+}
+
+.nav-link {
+    color: #f9bb6f !important;
+    letter-spacing: 3px;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background: #f9bb6f !important;
+    color: #363333 !important;
+    transition: all .3s ease 0s;
+}
+
+main {
+    position: relative;
+    background: url('/img/cafe-bisa-ngopi.jpg');
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 280px 0 220px;
+    background-attachment: fixed;
+}
+
+main h2 {
+    font-size: 2.6em;
+    color: #f9bb6f;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+main p {
+    margin-top: 1em;
+    padding: 0;
+    font-size: 16px;
+    color: #ccc;
+    padding-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+main .readMore {
+    background: #f9bb6f;
+    color: #363333;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+main .readMore:hover {
+    background-color: rgb(249, 187, 111, .8);
+    transition: all .3s ease 0s;
+}
+
+#content p {
+    color: #626262;
+    letter-spacing: 1px;
+}
+
+footer {
+    background-color: rgb(37, 37, 37);
+}
