@@ -8,11 +8,11 @@
                 <div class="card-body p-5">
                     <form action="/authenticate" method="post">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+                            <input type="email" class="form-control" style="background-color: #eeeeee" id="floatingInput" name="email" placeholder="name@example.com">
                             <label for="floatingInput">Alamat Email</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+                            <input type="password" class="form-control" style="background-color: #eeeeee" id="floatingPassword" name="password" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
                         <button type="submit" class="btn tombol-auth w-100 mb-2">Login</button>
