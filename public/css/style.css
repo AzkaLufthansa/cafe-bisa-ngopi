@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }
 
 header {
@@ -19,6 +19,7 @@ header {
     font-size: 1.5em;
     text-transform: uppercase;
     color: #f9bb6f !important;
+    letter-spacing: 2px;
 }
 
 .nav-item {
@@ -56,7 +57,7 @@ main {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-    padding: 200px 0 0;
+    padding: 250px 0 0;
     background-attachment: fixed;
 }
 

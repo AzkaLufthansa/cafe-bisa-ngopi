@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +19,15 @@ Route::get('/', function () {
     return view('home', [
         'title' => 'Home'
     ]);
-});
+})->middleware('guest');
 
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+    Route::get('/catatan_transaksi', [DashboardController::class, 'catatan_transaksi']);
+    Route::get('/kelola_menu', [DashboardController::class, 'kelola_menu']);
+    Route::get('/kelola_user', [DashboardController::class, 'kelola_user']);
+});
