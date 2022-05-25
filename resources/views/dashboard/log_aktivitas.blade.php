@@ -10,14 +10,15 @@
             <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Tanggal</th>
-                    <th scope="col">Nama Pengguna</th>
+                    <th scope="col">Nama User</th>
+                    <th scope="col">Role</th>
                     <th scope="col">Aksi</th>
+                    <th scope="col">Tanggal</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="text-center table-warning" colspan="4">Data log masih kosong!</td>
+                    <td class="text-center table-warning" colspan="5">Data log masih kosong!</td>
                 </tr>
             </tbody>
         </table>

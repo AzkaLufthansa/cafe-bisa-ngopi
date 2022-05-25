@@ -29,7 +29,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
-    Route::get('/catatan_transaksi', [DashboardController::class, 'catatan_transaksi']);
+    Route::get('/transaksi', [DashboardController::class, 'transaksi']);
     Route::get('/laporan_pendapatan', [DashboardController::class, 'laporan_pendapatan']);
     Route::get('/log_aktivitas', [DashboardController::class, 'log_aktivitas']);
 
