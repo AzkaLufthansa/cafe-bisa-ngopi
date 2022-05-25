@@ -5,6 +5,8 @@
         <h2>Catatan Transaksi</h2>
     </div>
 
+    <a href="/buat_transaksi" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Buat Transaksi</a>
+
     <div class="table-responsive-md">
         <table class="table table-striped table-hover">
             <thead class="table-dark">
