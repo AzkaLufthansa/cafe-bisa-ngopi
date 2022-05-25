@@ -3,7 +3,7 @@
 @section('container')
     <div class="row justify-content-center">
         <div class="col-lg-5">
-            <div class="card shadow-lg">
+            <div class="card shadow-lg border-0">
                 <h5 class="card-header judul-kartu text-center fw-bold">Login</h5>
                 <div class="card-body p-5">
                     <form action="/login" method="post">

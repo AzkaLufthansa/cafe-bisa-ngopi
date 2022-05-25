@@ -6,14 +6,13 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function dashboard()
+    public function index()
     {
         return view('dashboard.index', [
             'title' => 'Dashboard'
         ]);
     }
 
-    // Method Kasir
     public function catatan_transaksi()
     {
         return view('dashboard.catatan_transaksi', [
@@ -21,19 +20,17 @@ class DashboardController extends Controller
         ]);
     }
 
-    // Method Manajer
-    public function kelola_menu()
+    public function laporan_pendapatan()
     {
-        return view('dashboard.kelola_menu', [
-            'title' => 'Kelola Menu'
+        return view('dashboard.laporan_pendapatan', [
+            'title' => 'Laporan Pendapatan'
         ]);
     }
 
-    // Method Admin
-    public function kelola_user()
+    public function log_aktivitas()
     {
-        return view('dashboard.kelola_user', [
-            'title' => 'Kelola User'
+        return view('dashboard.log_aktivitas', [
+            'title' => 'Log Aktivitas Pegawai'
         ]);
     }
 }

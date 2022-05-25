@@ -25,7 +25,6 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'transaksi-pemesanan-makanan']);
         Permission::create(['name' => 'melihat-catatan-transaksi']);
         Permission::create(['name' => 'mengelola-menu']);
-        Permission::create(['name' => 'melihat-catatan-transaksi-pegawai']);
         Permission::create(['name' => 'melihat-laporan-pendapatan']);
         Permission::create(['name' => 'melihat-log-aktivitas-pegawai']);
         Permission::create(['name' => 'mengelola-user']);
@@ -37,7 +36,7 @@ class PermissionSeeder extends Seeder
 
         $roleManajer = Role::create(['name' => 'manajer']);
         $roleManajer->givePermissionTo('mengelola-menu');
-        $roleManajer->givePermissionTo('melihat-catatan-transaksi-pegawai');
+        $roleManajer->givePermissionTo('melihat-catatan-transaksi');
         $roleManajer->givePermissionTo('melihat-laporan-pendapatan');
         $roleManajer->givePermissionTo('melihat-log-aktivitas-pegawai');
 

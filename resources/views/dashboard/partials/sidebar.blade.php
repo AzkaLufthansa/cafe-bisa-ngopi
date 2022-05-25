@@ -4,7 +4,7 @@
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="#">
+                        <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
                             <span data-feather="home" class="align-text-bottom"></span>
                             <i class="fa-solid fa-gauge"></i> Dashboard
                         </a>
@@ -18,7 +18,7 @@
                     @endcan
                     @can('mengelola-menu')
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('kelola_menu') ? 'active' : '' }}" href="/kelola_menu">
+                        <a class="nav-link {{ Request::is('menu*') ? 'active' : '' }}" href="/menu">
                             <i class="fa-solid fa-bars"></i> Menu
                         </a>
                     </li>
@@ -32,8 +32,8 @@
                     @endcan
                     @can('mengelola-user')
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('kelola_user') ? 'active' : '' }}" href="/kelola_user">
-                            <i class="fa-solid fa-users"></i> User
+                        <a class="nav-link {{ Request::is('user*') ? 'active' : '' }}" href="/user">
+                            <i class="fa-solid fa-users"></i> Users
                         </a>
                     </li>
                     @endcan

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +28,11 @@ Route::post('/login', [LoginController::class, 'authenticate'])->middleware('gue
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+    Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/catatan_transaksi', [DashboardController::class, 'catatan_transaksi']);
-    Route::get('/kelola_menu', [DashboardController::class, 'kelola_menu']);
-    Route::get('/kelola_user', [DashboardController::class, 'kelola_user']);
+    Route::get('/laporan_pendapatan', [DashboardController::class, 'laporan_pendapatan']);
+    Route::get('/log_aktivitas', [DashboardController::class, 'log_aktivitas']);
+
+    Route::resource('menu', MenuController::class);
+    Route::resource('user', DashboardUserController::class);
 });

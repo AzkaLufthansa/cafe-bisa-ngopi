@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 header {
@@ -120,6 +120,11 @@ footer {
     letter-spacing: 1px;
     font-weight: bold;
     color: #363333;
+}
+
+.tombol-auth:focus {
+    background-color: rgb(249, 187, 111, .85);
+    border-color: #f0aa56;
 }
 
 .tombol-auth:hover {
