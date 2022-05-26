@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ActivityLog;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -30,7 +31,8 @@ class DashboardController extends Controller
     public function log_aktivitas()
     {
         return view('dashboard.log_aktivitas', [
-            'title' => 'Log Aktivitas Pegawai'
+            'title' => 'Log Aktivitas Pegawai',
+            'activities' => ActivityLog::with('user')->get()
         ]);
     }
 }

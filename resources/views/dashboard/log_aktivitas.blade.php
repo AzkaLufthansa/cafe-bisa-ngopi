@@ -17,9 +17,21 @@
                 </tr>
             </thead>
             <tbody>
+            @if ($activities->count())
+                @foreach ($activities as $activity)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $activity->user->name }}</td>
+                    <td>{{ $activity->user->getRoleNames()->first() }}</td>
+                    <td>{{ $activity->activity_name }}</td>
+                    <td>{{ $activity->created_at }}</td>
+                </tr>
+                @endforeach
+            @else
                 <tr>
                     <td class="text-center table-warning" colspan="5">Data log masih kosong!</td>
                 </tr>
+            @endif
             </tbody>
         </table>
     </div>

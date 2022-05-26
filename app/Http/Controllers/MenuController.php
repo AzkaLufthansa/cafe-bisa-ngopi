@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Menu;
+use App\Models\ActivityLog;
 
 class MenuController extends Controller
 {
@@ -51,6 +52,10 @@ class MenuController extends Controller
         $validatedData['gambar'] = $request->file('gambar')->store('gambar_menu');
 
         Menu::create($validatedData);
+        ActivityLog::create([
+            'user_id' => auth()->user()->id,
+            'activity_name' => 'Membuat menu'
+        ]);
         return redirect('/menu')->with('success', 'Menu berhasil dibuat!');
     }
 
@@ -99,6 +104,10 @@ class MenuController extends Controller
         $validatedData['gambar'] = $request->file('gambar')->store('gambar_menu');
 
         Menu::find($menu->id)->update($validatedData);
+        ActivityLog::create([
+            'user_id' => auth()->user()->id,
+            'activity_name' => 'Mengupdate menu'
+        ]);
         return redirect('/menu')->with('success', 'Menu berhasil diedit!');
     }
 
@@ -112,6 +121,10 @@ class MenuController extends Controller
     {
         Storage::delete($menu->gambar);
         Menu::destroy($menu->id);
+        ActivityLog::create([
+            'user_id' => auth()->user()->id,
+            'activity_name' => 'Menghapus menu'
+        ]);
         return redirect('/menu')->with('success', 'Menu berhasil dihapus!');
     }
 }

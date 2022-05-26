@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\ActivityLog;
 use Spatie\Permission\Models\Role;
 
 class DashboardUserController extends Controller
@@ -52,6 +53,12 @@ class DashboardUserController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
         $user = User::create($validatedData);
         $user->assignRole($request->role);
+        
+        ActivityLog::create([
+            'user_id' => auth()->user()->id,
+            'activity_name' => 'Membuat user'
+        ]);
+
         return redirect('/user')->with('success', 'User berhasil dibuat!');
     }
 
@@ -98,6 +105,10 @@ class DashboardUserController extends Controller
         User::find($user->id)
                       ->update($validatedData);
         $user->syncRoles($request->role);
+        ActivityLog::create([
+            'user_id' => auth()->user()->id,
+            'activity_name' => 'Mengupdate user'
+        ]);
         return redirect('/user')->with('success', 'User berhasil diedit!');
     }
 
@@ -110,6 +121,10 @@ class DashboardUserController extends Controller
     public function destroy(User $user)
     {
         User::destroy($user->id);
+        ActivityLog::create([
+            'user_id' => auth()->user()->id,
+            'activity_name' => 'Menghapus user'
+        ]);
         return redirect('/user')->with('success', 'User berhasil dihapus!');
     }
 }
