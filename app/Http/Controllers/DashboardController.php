@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ActivityLog;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -18,6 +19,14 @@ class DashboardController extends Controller
     {
         return view('dashboard.transaksi', [
             'title' => 'Catatan Transaksi'
+        ]);
+    }
+
+    public function buat_transaksi()
+    {
+        return view('dashboard.buat_transaksi', [
+            'title' => 'Buat Transaksi',
+            'menus' => Menu::all()
         ]);
     }
 

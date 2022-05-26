@@ -5,19 +5,21 @@
         <h2>Catatan Transaksi</h2>
     </div>
 
+    @can('transaksi-pemesanan-makanan')
     <a href="/buat_transaksi" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Buat Transaksi</a>
+    @endcan
 
     <div class="table-responsive-md">
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">No Faktur</th>
+                    <th scope="col">No Transaksi</th>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Detail</th>
                     <th scope="col">Total</th>
                     <th scope="col">No Meja</th>
-                    <th scope="col">Nama Pengguna</th>
+                    <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
