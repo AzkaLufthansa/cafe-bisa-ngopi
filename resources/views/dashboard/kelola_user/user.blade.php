@@ -15,7 +15,7 @@
     <a href="/user/create" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Buat User</a>
 
     <div class="table-responsive-md">
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover shadow-sm">
             <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>

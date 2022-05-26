@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <div class="card bg-light">
+            <div class="card bg-light shadow-sm">
                 <div class="card-body">
                     <form action="/user" method="post">
                         @csrf

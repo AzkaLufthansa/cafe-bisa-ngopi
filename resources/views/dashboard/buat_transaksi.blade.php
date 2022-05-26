@@ -5,9 +5,9 @@
         <h2>Buat Transaksi</h2>
     </div>
 
-    <div class="row mb-4">
-        <div class="col-lg-6">
-            <div class="card bg-light">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="card bg-light mb-4 shadow-sm">
                 <div class="card-body">
                     <form action="">
                         @csrf
@@ -27,9 +27,9 @@
                             @if ($menus->count())
                                 @foreach ($menus as $menu)
                                     @if (old('menu') == $menu->nama)
-                                        <option value="{{ $menu->id }}" selected>{{ $menu->nama }}</option>
+                                        <option value="{{ $menu->id }}" selected>{{ $menu->nama }} - {{ $menu->harga }}</option>
                                     @endif
-                                        <option value="{{ $menu->id }}">{{ $menu->nama }}</option>
+                                        <option value="{{ $menu->id }}">{{ $menu->nama }}  - {{ $menu->harga }}</option>
                                 @endforeach
                             @else
                                 <option value="">--Data menu masih kosong--</option>
@@ -70,16 +70,15 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
+    
         <div class="col-lg-7">
-            <div class="card bg-light">
+            <div class="card bg-light shadow-sm">
                 <div class="card-header">
                     Nomor Transaksi - <span class="fw-bold"></span>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsize-md">
+                    <div class="table-responsive">
                         <table class="table table-striped table-hover">
                             <thead class="table-dark">
                                 <tr>
@@ -115,6 +114,7 @@
                         <button type="submit" class="btn btn-success">Bayar</button>
                     </form>
                 </div>
+            </div>
         </div>
     </div>
 @endsection
