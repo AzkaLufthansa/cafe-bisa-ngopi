@@ -43,7 +43,7 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|unique:menus',
             'deskripsi' => 'required',
             'harga' => 'required|numeric',
             'gambar' => 'required|image|file|max:1024'

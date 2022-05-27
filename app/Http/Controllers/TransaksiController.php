@@ -24,6 +24,11 @@ class TransaksiController extends Controller
             'menus' => Menu::all()
         ]);
     }
+    
+    public function get_harga(Menu $menu)
+    {
+        return $menu->harga;
+    }
 
     public function store(Request $request)
     {
@@ -31,10 +36,12 @@ class TransaksiController extends Controller
             'tanggal' => 'required',
             'nama_pelanggan' => 'required',
             'nama_menu' => 'required',
-            'jumlah' => 'required|numeric',
+            'jumlah' => 'required|numeric|gt:0',
+            'total_harga' => 'required|gt:0'
         ]);
 
-        $validatedData['total_harga'] = $request->total_harga;
+        $menu = Menu::find($request->nama_menu);
+        $validatedData['nama_menu'] = $menu->nama;
         $validatedData['nama_kasir'] = $request->nama_kasir;
 
         Transaksi::create($validatedData);
@@ -46,4 +53,5 @@ class TransaksiController extends Controller
 
         return redirect('/transaksi')->with('success', 'Transaksi berhasil dibuat!');
     }
+
 }

@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/transaksi', [TransaksiController::class, 'index']);
     Route::get('/buat_transaksi', [TransaksiController::class, 'buat_transaksi']);
+    Route::get('/get_harga/{menu}', [TransaksiController::class, 'get_harga']);
     Route::post('/store', [TransaksiController::class, 'store']);
 
     Route::resource('menu', MenuController::class);

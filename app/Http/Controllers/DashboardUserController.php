@@ -46,7 +46,7 @@ class DashboardUserController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
-            'email' => 'required|email:dns',
+            'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:8'
         ]);
 

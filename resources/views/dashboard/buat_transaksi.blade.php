@@ -34,20 +34,20 @@
                             <select class="form-select @error('nama_menu') is-invalid @enderror" id="nama_menu" name="nama_menu" aria-label="Default select example">
                                 
                             @if ($menus->count())
-                                <option value="">--Pilih menu--</option>
+                                <option value="">=== Pilih Menu ===</option>
                                 @foreach ($menus as $menu)
-                                    @if (old('nama_menu') == $menu->nama)
-                                        <option value="{{ $menu->nama }}" selected>{{ $menu->nama }} - {{ $menu->harga }}</option>
+                                    @if (old('nama_menu') == $menu->id)
+                                        <option value="{{ $menu->id }}" selected>{{ $menu->nama }} | {{ $menu->harga }}</option>
                                     @else
-                                        <option value="{{ $menu->nama }}">{{ $menu->nama }}  - {{ $menu->harga }}</option>
+                                        <option value="{{ $menu->id }}">{{ $menu->nama }} | {{ $menu->harga }}</option>
                                     @endif
                                 @endforeach
                             @else
-                                <option value="">--Data menu masih kosong--</option>
+                                <option value="">===Data menu masih kosong===</option>
                             @endif
 
                             </select>
-                            @error('menu')
+                            @error('nama_menu')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -64,19 +64,25 @@
                         </div>
                         <div class="mb-3">
                             <label for="total_harga" class="form-label">Total Harga</label>
-                            <input type="number" class="form-control" id="total_harga" name="total_harga" aria-describedby="emailHelp" value="15000" readonly>
+                            <input type="number" class="form-control @error('total_harga') is-invalid @enderror" id="total_harga" name="total_harga" aria-describedby="emailHelp" value="0" readonly>
+                            @error('total_harga')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="nama_kasir" class="form-label">Nama Kasir</label>
                             <input type="text" class="form-control" id="nama_kasir" name="nama_kasir" aria-describedby="emailHelp" value="{{ auth()->user()->name }}" readonly>
                         </div>
-                        <a href="/transaksi" class="btn btn-danger">Kembali</a>
-                        <button type="submit" class="btn btn-primary">Buat Transaksi</button>
+                        <div class="justify-content-between d-flex">
+                            <a href="/transaksi" class="btn btn-danger">Kembali</a>
+                            <button type="submit" class="btn btn-primary">Buat Transaksi</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-
     
         {{-- <div class="col-lg-7">
             <div class="card bg-light shadow-sm">

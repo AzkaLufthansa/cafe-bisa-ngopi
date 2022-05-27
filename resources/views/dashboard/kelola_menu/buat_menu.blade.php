@@ -47,8 +47,10 @@
                                 </div>
                             @enderror
                         </div>
-                        <a href="/menu" class="btn btn-danger">Kembali</a>
-                        <button type="submit" class="btn btn-success">Buat</button>
+                        <div class="justify-content-between d-flex">
+                            <a href="/menu" class="btn btn-danger">Kembali</a>
+                            <button type="submit" class="btn btn-success">Buat</button>
+                        </div>
                     </form>
                 </div>
             </div>
