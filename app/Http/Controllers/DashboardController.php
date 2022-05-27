@@ -14,6 +14,16 @@ class DashboardController extends Controller
         ]);
     }
 
+<<<<<<< HEAD
+=======
+    public function transaksi()
+    {
+        return view('dashboard.transaksi', [
+            'title' => 'Catatan Transaksi'
+        ]);
+    }
+
+>>>>>>> c6e2e253b9e4a835608f3e507b06ade9b3433a6e
     public function laporan_pendapatan()
     {
         return view('dashboard.laporan_pendapatan', [
