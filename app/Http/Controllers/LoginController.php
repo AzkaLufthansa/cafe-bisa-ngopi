@@ -27,7 +27,7 @@ class LoginController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->with('loginError', 'Login Failed!');
+        return back()->with('error', 'Login Failed!');
     }
 
     public function logout(Request $request)

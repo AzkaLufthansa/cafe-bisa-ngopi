@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:melihat-laporan-pendapatan', ['only' => ['laporan_pendapatan']]);
+        $this->middleware('permission:melihat-log-aktivitas-pegawai', ['only' => ['log_aktivitas']]);
+    }
+
     public function index()
     {
         return view('dashboard.index', [

@@ -6,6 +6,12 @@
             <div class="card shadow-lg border-0">
                 <h5 class="card-header judul-kartu text-center fw-bold">Login</h5>
                 <div class="card-body p-5">
+                    @if(session()->has('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
                     <form action="/login" method="post">
                         @csrf
                         <div class="form-floating mb-3">

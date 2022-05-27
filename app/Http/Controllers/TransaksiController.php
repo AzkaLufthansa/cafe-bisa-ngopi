@@ -9,6 +9,12 @@ use App\Models\ActivityLog;
 
 class TransaksiController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:transaksi-pemesanan-makanan', ['only' => ['buat_transaksi', 'store', 'get_harga']]);
+        $this->middleware('permission:melihat-catatan-transaksi', ['only' => ['index']]);
+    }
+    
     public function index()
     {
         return view('dashboard.transaksi', [
