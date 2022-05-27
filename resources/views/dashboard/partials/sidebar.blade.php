@@ -11,11 +11,7 @@
                     </li>
                     @can('melihat-catatan-transaksi')
                     <li class="nav-item">
-<<<<<<< HEAD
                         <a class="nav-link {{ Request::is('transaksi', 'buat_transaksi') ? 'active' : '' }}" href="/transaksi">
-=======
-                        <a class="nav-link {{ Request::is('transaksi') ? 'active' : '' }}" href="/transaksi">
->>>>>>> c6e2e253b9e4a835608f3e507b06ade9b3433a6e
                             <i class="fa-solid fa-credit-card"></i> Catatan Transaksi
                         </a>
                     </li>
