@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ActivityLog;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -23,7 +24,8 @@ class DashboardController extends Controller
     public function laporan_pendapatan()
     {
         return view('dashboard.laporan_pendapatan', [
-            'title' => 'Laporan Pendapatan'
+            'title' => 'Laporan Pendapatan',
+            'pendapatan' => Transaksi::orderBy('tanggal')->filterTanggal()->get()
         ]);
     }
 
