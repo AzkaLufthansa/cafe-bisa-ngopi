@@ -19,7 +19,7 @@ class TransaksiController extends Controller
     {
         return view('dashboard.transaksi', [
             'title' => 'Catatan Transaksi',
-            'transaksi' => Transaksi::latest()->search()->get()
+            'transaksi' => Transaksi::latest()->search()->paginate(7)->withQueryString()
         ]);
     }
 

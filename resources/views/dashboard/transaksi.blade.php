@@ -21,7 +21,6 @@
             <form action="/transaksi" method="get">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" name="keyword" placeholder="Masukkan Kata Kunci" aria-label="Recipient's username" aria-describedby="button-addon2" value="{{ request('keyword') }}">
-                    <a class="btn btn-danger" href="/transaksi" id="button-addon2">Reset</a>
                     <button class="btn btn-success" type="submit" id="button-addon2">Cari</button>
                 </div>
             </form>
@@ -61,5 +60,9 @@
             @endif
             </tbody>
         </table>
+    </div>
+
+    <div class="justify-content-end d-flex">
+        {{ $transaksi->links() }}
     </div>
 @endsection

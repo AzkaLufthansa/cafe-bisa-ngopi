@@ -17,7 +17,7 @@
             </div>
         </div>
             <div class="mb-3 justify-content-end d-flex">
-                <a href="/laporan_pendapatan" class="btn btn-danger me-2">Reset</a>
+                <a href="/laporan_pendapatan" class="btn btn-danger me-2">Kembali</a>
                 <button type="submit" class="btn btn-success">Tampilkan</button>
             </div>
     </form>

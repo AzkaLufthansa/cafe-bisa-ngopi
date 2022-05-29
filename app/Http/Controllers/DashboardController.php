@@ -26,7 +26,7 @@ class DashboardController extends Controller
     {
         return view('dashboard.laporan_pendapatan', [
             'title' => 'Laporan Pendapatan',
-            'pendapatan' => Transaksi::orderBy('tanggal')->filterTanggal()->get()
+            'pendapatan' => Transaksi::orderBy('tanggal')->filterTanggal()->paginate(7)->withQueryString()
         ]);
     }
 
@@ -41,7 +41,7 @@ class DashboardController extends Controller
     {
         return view('dashboard.log_aktivitas', [
             'title' => 'Log Aktivitas Pegawai',
-            'activities' => ActivityLog::with('user')->search()->get()
+            'activities' => ActivityLog::with('user')->search()->paginate(7)->withQueryString()
         ]);
     }
 }
