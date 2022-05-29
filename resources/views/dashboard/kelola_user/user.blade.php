@@ -12,7 +12,10 @@
         </div>
     @endif
 
-    <a href="/user/create" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Buat User</a>
+    <div class="mb-3">
+        <a href="/user/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Buat User</a>
+        <a href="/export_user" class="btn btn-info"><i class="fa-solid fa-file-pdf"></i> Export PDF</a>
+    </div>
 
     <div class="row justify-content-end">
         <div class="col-lg-4">
@@ -56,7 +59,7 @@
                 @endforeach
             @else
                 <tr>
-                    <td class="text-center table-warning" colspan="4">Data user masih kosong!</td>
+                    <td class="text-center table-warning" colspan="5">Data user masih kosong!</td>
                 </tr>
             @endif
             </tbody>

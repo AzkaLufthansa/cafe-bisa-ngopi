@@ -5,6 +5,8 @@
         <h2>Log Aktivitas Pegawai</h2>
     </div>
 
+    <a href="/export_log" class="btn btn-info mb-3"><i class="fa-solid fa-file-pdf"></i> Export PDF</a>
+
     <div class="row justify-content-end">
         <div class="col-lg-4">
             <form action="/log_aktivitas" method="get">

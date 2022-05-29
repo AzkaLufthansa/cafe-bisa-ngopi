@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ActivityLog;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class DashboardController extends Controller
 {
@@ -43,5 +43,19 @@ class DashboardController extends Controller
             'title' => 'Log Aktivitas Pegawai',
             'activities' => ActivityLog::with('user')->search()->paginate(7)->withQueryString()
         ]);
+    }
+
+    public function export_pendapatan()
+    {
+        $pendapatan = Transaksi::latest()->get();
+        $pdf = PDF::loadview('dashboard.pdf.pendapatan_pdf', ['pendapatan' => $pendapatan]);
+        return $pdf->stream();
+    }
+
+    public function export_log()
+    {
+        $activities = ActivityLog::latest()->get();
+        $pdf = PDF::loadview('dashboard.pdf.log_pdf', ['activities' => $activities]);
+        return $pdf->stream();
     }
 }

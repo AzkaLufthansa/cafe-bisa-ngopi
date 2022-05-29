@@ -34,6 +34,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/ubah_periode', [DashboardController::class, 'ubah_periode']);
     Route::get('/log_aktivitas', [DashboardController::class, 'log_aktivitas']);
     
+    Route::get('/export_transaksi', [TransaksiController::class, 'export_transaksi']);
+    Route::get('/export_menu', [MenuController::class, 'export_menu']);
+    Route::get('/export_pendapatan', [DashboardController::class, 'export_pendapatan']);
+    Route::get('/export_user', [DashboardUserController::class, 'export_user']);
+    Route::get('/export_log', [DashboardController::class, 'export_log']);
+    
     Route::get('/transaksi', [TransaksiController::class, 'index']);
     Route::get('/buat_transaksi', [TransaksiController::class, 'buat_transaksi']);
     Route::get('/get_harga/{menu}', [TransaksiController::class, 'get_harga']);

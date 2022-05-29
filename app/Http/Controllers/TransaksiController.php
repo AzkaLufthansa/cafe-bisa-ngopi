@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\Transaksi;
 use App\Models\ActivityLog;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class TransaksiController extends Controller
 {
@@ -60,4 +61,10 @@ class TransaksiController extends Controller
         return redirect('/transaksi')->with('success', 'Transaksi berhasil dibuat!');
     }
 
+    public function export_transaksi()
+    {
+        $transaksi = Transaksi::latest()->get();
+        $pdf = PDF::loadview('dashboard.pdf.transaksi_pdf',['transaksi' => $transaksi]);
+        return $pdf->stream();
+    }
 }

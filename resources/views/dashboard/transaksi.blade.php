@@ -12,9 +12,12 @@
         </div>
     @endif
 
-    @can('transaksi-pemesanan-makanan')
-    <a href="/buat_transaksi" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Buat Transaksi</a>
-    @endcan
+    <div class="mb-3">
+        @can('transaksi-pemesanan-makanan')
+            <a href="/buat_transaksi" class="btn btn-success"><i class="fa-solid fa-plus"></i> Buat Transaksi</a>
+        @endcan
+        <a href="/export_transaksi" class="btn btn-info"><i class="fa-solid fa-file-pdf"></i> Export PDF</a>
+    </div>
 
     <div class="row justify-content-end">
         <div class="col-lg-4">

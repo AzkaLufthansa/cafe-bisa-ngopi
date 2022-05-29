@@ -12,7 +12,10 @@
         </div>
     @endif
 
-    <a href="/menu/create" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Buat Menu</a>
+    <div class="mb-3">
+        <a href="/menu/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Buat Menu</a>
+        <a href="/export_menu" class="btn btn-info"><i class="fa-solid fa-file-pdf"></i> Export PDF</a>
+    </div>
 
     <div class="row justify-content-end">
         <div class="col-lg-4">

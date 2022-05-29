@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Menu;
 use App\Models\ActivityLog;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class MenuController extends Controller
 {
@@ -126,5 +127,12 @@ class MenuController extends Controller
             'activity_name' => 'Menghapus menu'
         ]);
         return redirect('/menu')->with('success', 'Menu berhasil dihapus!');
+    }
+
+    public function export_menu()
+    {
+        $menu = Menu::all();
+        $pdf = PDF::loadview('dashboard.pdf.menu_pdf', ['menus' => $menu]);
+        return $pdf->stream();
     }
 }

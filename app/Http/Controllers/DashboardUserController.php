@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\ActivityLog;
 use Spatie\Permission\Models\Role;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class DashboardUserController extends Controller
 {
@@ -126,5 +127,12 @@ class DashboardUserController extends Controller
             'activity_name' => 'Menghapus user'
         ]);
         return redirect('/user')->with('success', 'User berhasil dihapus!');
+    }
+
+    public function export_user()
+    {
+        $users = User::all();
+        $pdf = PDF::loadview('dashboard.pdf.user_pdf', ['users' => $users]);
+        return $pdf->stream();
     }
 }

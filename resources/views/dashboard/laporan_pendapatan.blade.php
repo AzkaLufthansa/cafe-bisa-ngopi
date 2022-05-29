@@ -5,7 +5,10 @@
         <h2>Laporan Pendapatan</h2>
     </div>
 
-    <a href="/ubah_periode" class="btn btn-success mb-3"><i class="fa fa-calendar"></i> Ubah Periode</a>
+    <div class="mb-3">
+        <a href="/ubah_periode" class="btn btn-success"><i class="fa fa-calendar"></i> Ubah Periode</a>
+        <a href="/export_pendapatan" class="btn btn-info"><i class="fa-solid fa-file-pdf"></i> Export PDF</a>
+    </div>
 
     @if (request('start_date') && request('end_date'))
         <h5>Laporan Pendapatan dari {{ request('start_date') }} - {{ request('end_date') }}</h5>
