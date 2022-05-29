@@ -31,6 +31,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/laporan_pendapatan', [DashboardController::class, 'laporan_pendapatan']);
+    Route::get('/ubah_periode', [DashboardController::class, 'ubah_periode']);
     Route::get('/log_aktivitas', [DashboardController::class, 'log_aktivitas']);
     
     Route::get('/transaksi', [TransaksiController::class, 'index']);

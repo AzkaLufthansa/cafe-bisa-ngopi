@@ -48,4 +48,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(ActivityLog::class);
     }
+
+    public function scopeSearch($query)
+    {
+        if(request('keyword')) {
+            return $query->where('name', 'like', '%' . request('keyword') . '%')
+                        ->orWhere('email', 'like', '%' . request('keyword') . '%');
+        }
+    }
 }

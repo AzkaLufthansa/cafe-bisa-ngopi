@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ActivityLog;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class DashboardController extends Controller
 {
@@ -29,11 +30,18 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function ubah_periode()
+    {
+        return view('dashboard.ubah_periode', [
+            'title' => 'Ubah Periodi'
+        ]);
+    }
+
     public function log_aktivitas()
     {
         return view('dashboard.log_aktivitas', [
             'title' => 'Log Aktivitas Pegawai',
-            'activities' => ActivityLog::with('user')->get()
+            'activities' => ActivityLog::with('user')->search()->get()
         ]);
     }
 }

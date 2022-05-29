@@ -15,4 +15,12 @@ class ActivityLog extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function scopeSearch($query)
+    {
+        if(request('keyword')) {
+            return $query->where('activity_name', 'like', '%' . request('keyword') . '%')
+                        ->orWhere('created_at', 'like', '%' . request('keyword') . '%');
+        }
+    }
 }

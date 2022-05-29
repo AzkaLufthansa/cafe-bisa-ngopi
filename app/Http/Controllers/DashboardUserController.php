@@ -19,7 +19,7 @@ class DashboardUserController extends Controller
     {
         return view('dashboard.kelola_user.user', [
             'title' => 'Kelola User',
-            'users' => User::all()
+            'users' => User::search()->get()
         ]);
     }
 

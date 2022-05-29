@@ -18,7 +18,7 @@ class MenuController extends Controller
     {
         return view('dashboard.kelola_menu.menu', [
             'title' => 'Menu',
-            'menus' => Menu::all()
+            'menus' => Menu::search()->get()
         ]);
     }
 

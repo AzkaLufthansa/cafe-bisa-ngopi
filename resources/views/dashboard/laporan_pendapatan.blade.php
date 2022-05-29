@@ -5,27 +5,10 @@
         <h2>Laporan Pendapatan</h2>
     </div>
 
-    <form action="/laporan_pendapatan" method="get">
-        <div class="row mb-3">
-            <div class="col">
-                <label for="start_date" class="form-label">Start Date</label>
-                <input type="date" class="form-control" id="start_date" name="start_date" aria-describedby="emailHelp" value="{{ request('start_date') }}">
-            </div>
-            <div class="col">
-                <label for="end_date" class="form-label">End Date</label>
-                <input type="date" class="form-control" id="end_date" name="end_date" aria-describedby="emailHelp" value="{{ request('end_date') }}">
-            </div>
-        </div>
-            <div class="mb-3 justify-content-end d-flex">
-                <a href="/laporan_pendapatan" class="btn btn-danger me-2">Reset</a>
-                <button type="submit" class="btn btn-success">Tampilkan</button>
-            </div>
-    </form>
+    <a href="/ubah_periode" class="btn btn-success mb-3"><i class="fa fa-calendar"></i> Ubah Periode</a>
 
     @if (request('start_date') && request('end_date'))
         <h5>Laporan Pendapatan dari {{ request('start_date') }} - {{ request('end_date') }}</h5>
-    @else
-        <h5>Semua Laporan Pendapatan</h5>
     @endif
     <div class="table-responsive-md">
         <table class="table table-striped table-hover shadow-sm">

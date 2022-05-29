@@ -25,7 +25,7 @@
                     @endcan
                     @can('melihat-laporan-pendapatan')
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('laporan_pendapatan') ? 'active' : '' }}" href="/laporan_pendapatan">
+                        <a class="nav-link {{ Request::is('laporan_pendapatan', 'ubah_periode') ? 'active' : '' }}" href="/laporan_pendapatan">
                             <i class="fa-solid fa-flag"></i> Laporan Pendapatan
                         </a>
                     </li>
