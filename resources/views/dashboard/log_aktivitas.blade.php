@@ -22,18 +22,18 @@
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama User</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Aksi</th>
-                    <th scope="col">Tanggal</th>
+                    <th scope="col" width="5%">#</th>
+                    <th scope="col" width="25%">Nama User</th>
+                    <th scope="col" width="25%">Role</th>
+                    <th scope="col" width="25%">Aksi</th>
+                    <th scope="col" width="20%">Tanggal</th>
                 </tr>
             </thead>
             <tbody>
             @if ($activities->count())
                 @foreach ($activities as $activity)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
+                    <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $activity->user->name }}</td>
                     <td>{{ $activity->user->getRoleNames()->first() }}</td>
                     <td>{{ $activity->activity_name }}</td>

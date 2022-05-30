@@ -32,11 +32,11 @@
         <table class="table table-striped table-hover shadow-sm">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Aksi</th>
+                    <th scope="col" width="5%">#</th>
+                    <th scope="col" width="30%">Nama</th>
+                    <th scope="col" width="30%">Email</th>
+                    <th scope="col" width="20%">Role</th>
+                    <th scope="col" width="15%">Aksi</th>
                 </tr>
             </thead>
             <tbody>

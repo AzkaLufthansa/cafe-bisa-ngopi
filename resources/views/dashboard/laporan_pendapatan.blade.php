@@ -17,16 +17,16 @@
         <table class="table table-striped table-hover shadow-sm">
             <thead>
                 <tr class="table-dark">
-                    <th scope="col">#</th>
-                    <th scope="col">Tanggal</th>
-                    <th scope="col">Pendapatan</th>
+                    <th scope="col" width="10%">#</th>
+                    <th scope="col" width="60%">Tanggal</th>
+                    <th scope="col" width="30%">Pendapatan</th>
                 </tr>
             </thead>
             <tbody>
                 @if ($pendapatan->count())
                     @foreach ($pendapatan as $p)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $p->tanggal }}</td>
                             <td>{{ $p->total_harga }}</td>
                         </tr>

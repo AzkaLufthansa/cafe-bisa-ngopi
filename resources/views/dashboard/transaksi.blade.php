@@ -34,20 +34,20 @@
         <table class="table table-striped table-hover shadow-sm">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama Pelanggan</th>
-                    <th scope="col">Nama Menu</th>
-                    <th scope="col">Jumlah</th>
-                    <th scope="col">Total Harga</th>
-                    <th scope="col">Nama Kasir</th>
-                    <th scope="col">Tanggal</th>
+                    <th scope="col" width="5%">#</th>
+                    <th scope="col" width="20%">Nama Pelanggan</th>
+                    <th scope="col" width="20%">Nama Menu</th>
+                    <th scope="col" width="10%">Jumlah</th>
+                    <th scope="col" width="10%">Total Harga</th>
+                    <th scope="col" width="20%">Nama Kasir</th>
+                    <th scope="col" width="15%">Tanggal</th>
                 </tr>
             </thead>
             <tbody>
             @if ($transaksi->count())
                 @foreach ($transaksi as $t)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
+                    <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $t->nama_pelanggan }}</td>
                     <td>{{ $t->nama_menu }}</td>
                     <td>{{ $t->jumlah }}</td>

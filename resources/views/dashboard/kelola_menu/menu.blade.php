@@ -32,19 +32,19 @@
         <table class="table table-striped table-hover shadow-sm">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Deskripsi</th>
-                    <th scope="col">Harga</th>
-                    <th scope="col">Gambar</th>
-                    <th scope="col">Aksi</th>
+                    <th scope="col" width="5%">#</th>
+                    <th scope="col" width="20%">Nama</th>
+                    <th scope="col" width="30%">Deskripsi</th>
+                    <th scope="col" width="10%">Harga</th>
+                    <th scope="col" width="25%">Gambar</th>
+                    <th scope="col" width="10%">Aksi</th>
                 </tr>
             </thead>
             <tbody>
             @if($menus->count())
                 @foreach ($menus as $menu)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
+                    <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $menu->nama }}</td>
                     <td>{{ $menu->deskripsi }}</td>
                     <td>{{ $menu->harga }}</td>
