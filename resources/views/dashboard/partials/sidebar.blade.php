@@ -46,7 +46,7 @@
                     @endcan
                 </ul>
   
-                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+                {{-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
                     <span>Profile</span>
                 </h6>
                 <ul class="nav flex-column mb-2">
@@ -66,7 +66,7 @@
                             <i class="fa-solid fa-key"></i> Reset Password
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         </nav>
     </div>

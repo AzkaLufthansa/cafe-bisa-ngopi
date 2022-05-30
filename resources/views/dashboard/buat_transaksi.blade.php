@@ -37,9 +37,9 @@
                                 <option value="">=== Pilih Menu ===</option>
                                 @foreach ($menus as $menu)
                                     @if (old('nama_menu') == $menu->id)
-                                        <option value="{{ $menu->id }}" selected>{{ $menu->nama }} | {{ $menu->harga }}</option>
+                                        <option value="{{ $menu->id }}" selected>{{ $menu->nama }} | Rp. {{ number_format($menu->harga) }}</option>
                                     @else
-                                        <option value="{{ $menu->id }}">{{ $menu->nama }} | {{ $menu->harga }}</option>
+                                        <option value="{{ $menu->id }}">{{ $menu->nama }} | Rp. {{ number_format($menu->harga) }}</option>
                                     @endif
                                 @endforeach
                             @else
@@ -62,9 +62,10 @@
                             </div>
                             @enderror
                         </div>
-                        <div class="mb-3">
-                            <label for="total_harga" class="form-label">Total Harga</label>
-                            <input type="number" class="form-control @error('total_harga') is-invalid @enderror" id="total_harga" name="total_harga" aria-describedby="emailHelp" value="0" readonly>
+                        <label for="total_harga" class="form-label">Total Harga</label>
+                        <div class="input-group flex-nowrap mb-3">
+                            <span class="input-group-text" id="addon-wrapping">Rp.</span>
+                            <input type="text" class="form-control @error('total_harga') is-invalid @enderror" id="total_harga" name="total_harga" aria-describedby="emailHelp" value="{{ old('total_harga', 0) }}" readonly>
                             @error('total_harga')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -83,50 +84,5 @@
                 </div>
             </div>
         </div>
-    
-        {{-- <div class="col-lg-7">
-            <div class="card bg-light shadow-sm">
-                <div class="card-header">
-                    Nomor Transaksi - <span class="fw-bold"></span>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Menu</th>
-                                    <th scope="col">Harga</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Subtotal</th>
-                                    <th scope="col">Aksi</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <hr>
-                    <form action="">
-                        <div class="mb-3">
-                            <label for="total_transaksi" class="form-label">Total Keseluruhan</label>
-                            <input type="number" class="form-control" id="total_transaksi" name="total_transaksi" placeholder="0" disabled>
-                        </div>
-                        <div class="mb-3">
-                            <label for="total_bayar" class="form-label">Total Bayar</label>
-                            <input type="number" class="form-control @error('total_bayar') is-invalid @enderror" id="total_bayar" name="total_bayar" placeholder="0">
-                            @error('total_bayar')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label for="Total Kembali" class="form-label">Total Keseluruhan</label>
-                            <input type="number" class="form-control" id="total_kembali" name="total_kembali" placeholder="0" disabled>
-                        </div>
-                        <button type="submit" class="btn btn-success">Bayar</button>
-                    </form>
-                </div>
-            </div>
-        </div> --}}
     </div>
 @endsection

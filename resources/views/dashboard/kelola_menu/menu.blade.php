@@ -34,8 +34,8 @@
                 <tr>
                     <th scope="col" width="5%">#</th>
                     <th scope="col" width="20%">Nama</th>
-                    <th scope="col" width="30%">Deskripsi</th>
-                    <th scope="col" width="10%">Harga</th>
+                    <th scope="col" width="25%">Deskripsi</th>
+                    <th scope="col" width="15%">Harga</th>
                     <th scope="col" width="25%">Gambar</th>
                     <th scope="col" width="10%">Aksi</th>
                 </tr>
@@ -47,7 +47,7 @@
                     <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $menu->nama }}</td>
                     <td>{{ $menu->deskripsi }}</td>
-                    <td>{{ $menu->harga }}</td>
+                    <td>Rp. {{ number_format($menu->harga) }}</td>
                     <td>
                         <img src="{{ asset('storage/' . $menu->gambar) }}" alt="{{ $menu->nama }}" class="img-thumbnail" width="170">
                     </td>

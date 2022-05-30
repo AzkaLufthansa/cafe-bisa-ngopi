@@ -28,7 +28,7 @@
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $p->tanggal }}</td>
-                            <td>{{ $p->total_harga }}</td>
+                            <td>Rp. {{ number_format($p->total_harga) }}</td>
                         </tr>
                     @endforeach
                         
@@ -41,7 +41,7 @@
 
                     <tr class="table-secondary">
                         <td colspan=2 class="text-ensd fw-bold">Total</td>
-                        <td>{{ $total }}</td>
+                        <td>Rp. {{ number_format($total) }}</td>
                     </tr>
                 @else
                     <tr>

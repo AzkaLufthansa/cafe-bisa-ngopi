@@ -45,6 +45,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/get_harga/{menu}', [TransaksiController::class, 'get_harga']);
     Route::post('/store', [TransaksiController::class, 'store']);
 
-    Route::resource('menu', MenuController::class)->middleware('permission:mengelola-menu');
-    Route::resource('user', DashboardUserController::class)->middleware('permission:mengelola-user');
+    Route::resource('menu', MenuController::class)->except('show')->middleware('permission:mengelola-menu');
+    Route::resource('user', DashboardUserController::class)->except('show')->middleware('permission:mengelola-user');
 });

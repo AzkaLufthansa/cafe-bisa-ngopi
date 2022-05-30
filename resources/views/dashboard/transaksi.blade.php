@@ -30,17 +30,17 @@
         </div>
     </div>
 
-    <div class="table-responsive-md">
+    <div class="table-responsived-sss">
         <table class="table table-striped table-hover shadow-sm">
             <thead class="table-dark">
                 <tr>
                     <th scope="col" width="5%">#</th>
-                    <th scope="col" width="20%">Nama Pelanggan</th>
-                    <th scope="col" width="20%">Nama Menu</th>
-                    <th scope="col" width="10%">Jumlah</th>
-                    <th scope="col" width="10%">Total Harga</th>
+                    <th scope="col" width="23%">Nama Pelanggan</th>
+                    <th scope="col" width="17%">Nama Menu</th>
+                    <th scope="col" width="7%">Jumlah</th>
+                    <th scope="col" width="18%">Total Harga</th>
                     <th scope="col" width="20%">Nama Kasir</th>
-                    <th scope="col" width="15%">Tanggal</th>
+                    <th scope="col" width="10%">Tanggal</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,7 +51,7 @@
                     <td>{{ $t->nama_pelanggan }}</td>
                     <td>{{ $t->nama_menu }}</td>
                     <td>{{ $t->jumlah }}</td>
-                    <td>{{ $t->total_harga }}</td>
+                    <td>Rp. {{ number_format($t->total_harga) }}</td>
                     <td>{{ $t->nama_kasir }}</td>
                     <td>{{ $t->tanggal }}</td>
                 </tr>

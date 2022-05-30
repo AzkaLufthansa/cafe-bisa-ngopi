@@ -11,7 +11,9 @@ $(function() {
             url: '/get_harga/'+id,
             method: 'get',
             success: function(harga) {
-                $('#total_harga').val(harga * jumlah);
+                const totalHarga = harga * jumlah;
+                const totalHargaFixed = totalHarga.toLocaleString('en-US');
+                $('#total_harga').val(totalHargaFixed);
             }
         });
     });

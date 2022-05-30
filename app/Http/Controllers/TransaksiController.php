@@ -44,12 +44,13 @@ class TransaksiController extends Controller
             'nama_pelanggan' => 'required',
             'nama_menu' => 'required',
             'jumlah' => 'required|numeric|gt:0',
-            'total_harga' => 'required|gt:0'
+            'total_harga' => 'required'
         ]);
 
         $menu = Menu::find($request->nama_menu);
         $validatedData['nama_menu'] = $menu->nama;
         $validatedData['nama_kasir'] = $request->nama_kasir;
+        $validatedData['total_harga'] = str_replace(',', '', $request->total_harga);
 
         Transaksi::create($validatedData);
 

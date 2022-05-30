@@ -29,8 +29,9 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="mb-3">
-                            <label for="harga" class="form-label">Harga</label>
+                        <label for="harga" class="form-label">Harga</label>
+                        <div class="input-group flex-nowrap mb-3">
+                            <span class="input-group-text" id="addon-wrapping">Rp.</span>
                             <input type="number" class="form-control @error('harga') is-invalid @enderror" id="harga" name="harga" placeholder="Harga" value="{{ old('harga') }}">
                             @error('harga')
                                 <div class="invalid-feedback">
